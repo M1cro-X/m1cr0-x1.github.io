@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temper</title>
+</head>
+<style>
+    *{
+        text-align: center;
+    }
+    input {
+        border-radius: 15px;
+        border: 2px solid blue;
+        font-size: 18px;
+        line-height: 1.5;
+        outline: none;
+        font-weight: bold;
+        color: white;
+        padding: 5px 10px 5px 10px;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <h1>Temper</h1>
+    <form>
+        <label for="celsius">Celcius:</label><br />
+        <input type="number" id="celsius" value="0">
+        <br /><br />
+        <label for="fahr">Fahrenheit:</label><br />
+        <input type="number" id="fahr" value="32">
+    </form>
+    <script>
+        window.onload = function () {
+            let c =
+                document.getElementById("celsius");
+            let f =
+                document.getElementById("fahr");
+            c.oninput = function () {
+                f.value = (c.value * 9 / 5) + 32;
+            };
+            f.oninput = function () {
+                c.value = (f.value - 32) * 5 / 9;
+            }
+        };
+    </script>
+</body>
+
+</html>
